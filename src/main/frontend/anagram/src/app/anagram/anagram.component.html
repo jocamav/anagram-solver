@@ -1,0 +1,19 @@
+<div>
+  <input [(ngModel)]="word" placeholder="Insert a word" pInputText>
+  <p-button label="Search Anagrams" (onClick)="searchAnagrams()"></p-button>
+</div>
+<br/>
+<p-progressBar *ngIf="loading" mode="indeterminate"></p-progressBar>
+<p-messages [(value)]="msgs"></p-messages>
+<p-table [value]="anagrams" *ngIf="anagrams">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Anagrams</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-anagram>
+    <tr>
+      <td>{{anagram}}</td>
+    </tr>
+  </ng-template>
+</p-table>

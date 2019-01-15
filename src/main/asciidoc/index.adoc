@@ -1,0 +1,80 @@
+= Best Secret API Documentation
+Jose Carlos Martinez <josecarlosmartinez@gmail.com>;
+:toc: left
+
+This is documentation for API for getting the anagrams of any word.
+
+Anagram:: An anagram is a type of word play, the result of rearranging the letters of a word or phrase to produce a new word or phrase, using all the original letters exactly once; for example, the word anagram can be rearranged into nag-a-ram.
+
+*_Examples_*
+....
+William Shakespeare = I am a weakish speller
+Helmuth Elsner = me run the shell
+Computer = mute proc = CPU metro
+Visual Studio = loud USA visit = it’s usual void
+Wareneingang = gain new range = earn gang wine = eager wanning = aging earn new
+....
+
+This RESTful WebService, given a search phrase provided as parameter of the call, returns all the combinations of words that are anagrams of the search phrase.
+ 
+* Letter  case does not matter.
+* Special characters should be ignored.
+* Ignore short dictionary words (those having only one or two letters).
+
+== Anagrams
+=== Get List of Anagrams
+
+Method to get the list of anagrams given a word.
+
+*_Example: Anagrams of `Best Secret`_*
+....
+beet crests
+beets crest
+beret sects
+berets sect
+beset crest
+best erects
+best secret
+bests crete
+bests erect
+bet erst sec
+bet rest sec
+bet secrets
+bets erects
+bets secret
+better cess
+betters sec
+....
+
+*_Example: Anagrams of 'IT-Crowd'_*
+....
+cod writ
+cord wit
+cow dirt
+doc writ
+tic word
+....
+
+*_Example: Anagrams of 'Aschheim'_*
+....
+aches him
+ash chime
+chase him
+chime has
+hash mice
+hic shame
+mice shah
+....
+
+==== Request
+
+include::{snippets}/anagrams/getAnagrams/request-parameters.adoc[]
+include::{snippets}/anagrams/getAnagrams/http-request.adoc[]
+include::{snippets}/anagrams/getAnagrams/curl-request.adoc[]
+
+==== Response
+
+This call should return the list with all the anagrams for the word passed as parameter. 
+
+include::{snippets}/anagrams/getAnagrams/response-fields.adoc[]
+include::{snippets}/anagrams/getAnagrams/http-response.adoc[]
